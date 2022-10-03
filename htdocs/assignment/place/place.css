@@ -1,0 +1,95 @@
+/*Restart any page setting */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: pink;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    margin: 10px;
+  }
+.page {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1 5fr 0.1fr;
+    grid-template-areas:
+        "nav nav nav nav nav"
+        "places gallery gallery gallery gallery"
+        "footer footer footer footer footer";
+}
+nav {
+    grid-area: nav;
+    display: grid;
+    background: darkslategray;
+    grid-area: nav;
+    grid-template-columns: repeat(auto-fit, minmax(0, min-content));
+}
+nav ul {
+    display: grid;
+    grid-auto-flow: column;
+    list-style: none;
+    gap: 20px;
+  }
+nav ul li a {
+    color: white;
+}
+
+#places {
+    grid-area: places;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    background: lightgrey;
+    padding: 10px;
+    text-align: center;
+}
+#gallery {
+    grid-area: gallery;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    background: white;
+    text-align: left;
+    padding: 20px;
+}
+footer {
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    text-align: left;
+    padding-left: 10px;
+    padding-bottom: 15px;
+    background: darkslategray;    
+    color: white;
+  }
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .page {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.1fr 0.1fr 2fr 0.1fr;
+      grid-template-areas:
+        "nav"
+        "places"
+        "gallery"
+        "footer";
+    }
+    a {
+        text-align: center;
+    }
+    img {
+        width: 100%;
+    }
+  }
