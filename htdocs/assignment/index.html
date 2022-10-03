@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Twin Cities</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: lightgrey;
+    }
+
+    #wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: white;
+      border-right: 1px black solid;
+      border-left: 1px black solid;
+    }
+
+    header img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+
+    section img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid black;
+      width: 100%;
+    }
+  
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+    }
+
+    .section::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    /* Responsive layout - makes header and two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 700px) {
+      .column {
+        width: 100%;
+      }
+
+      header img {
+        width: 70%;
+      }
+}
+  </style>
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <header>
+      <img src="img/w.jpg" alt="world - header"/>
+    </header>
+
+    <!-- <nav>
+      <a class="home" href="#">Home</a>
+      <a class="plymouth" href="#">Plymouth</a>
+      <a class="gdynia" href="#">Gdynia</a>
+    </nav> -->
+
+    <section>
+      <div class="section">
+        <div class="column">
+          <a href="plymouth.php">
+          <img src="img/britishflag.jpg" alt="british flag">
+          </a>
+        </div>
+        <div class="column">
+          <a href="gdynia.php">
+          <img src="img/a.jpg" alt="polish flag">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer></footer>
+  </div>
+
+  </body>
